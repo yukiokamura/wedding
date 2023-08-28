@@ -1,0 +1,87 @@
+.map {
+  position: relative;
+  padding: 160px 0;
+  background-image: url(/img/bg-map.webp);
+  background-size: cover;
+  margin-top: -1px;
+  &-inner {
+    width: 80%;
+    max-width: 1100px;
+    clip-path: polygon(
+      15px 0%,
+      calc(100% - 15px) 0%,
+      100% 15px,
+      100% calc(100% - 15px),
+      calc(100% - 15px) 100%,
+      15px 100%,
+      0% calc(100% - 15px),
+      0% 15px
+    );
+    margin: auto;
+    position: relative;
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/bg-paper.webp);
+    background-size: 543.5px 477.5px;
+  }
+
+  &-contents {
+    position: relative;
+    padding: 80px 80px;
+    text-align: center;
+    &-tit {
+      font-size: remToPx(1.125);
+      line-height: 1;
+    }
+    &-link {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 0 remToPx(0.5);
+      a {
+        font-size: remToPx(0.875);
+        line-height: 1;
+        text-decoration: underline;
+      }
+      &::after {
+        content: "";
+        width: remToPx(0.75);
+        height: remToPx(0.75);
+        display: block;
+        background-image: url(/svg/arrow.svg);
+      }
+    }
+
+    &-googleMap {
+      width: 100%;
+      max-width: 700px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      margin: 40px auto 0;
+      &-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-des {
+      margin-top: 40px - remToPx(0.875) * 0.8 + remToPx(0.875) * 0.5;
+      p {
+        font-size: remToPx(0.875);
+        line-height: 1.6;
+        & + p {
+          margin-top: 32px - remToPx(0.875) * 0.8 + remToPx(0.875) * 0.5;
+        }
+      }
+    }
+  }
+}

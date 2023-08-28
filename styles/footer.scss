@@ -1,0 +1,105 @@
+.footer {
+  padding: 160px remToPx(3.75) 40px;
+  background-image: url("/img/bg-footer.webp");
+  background-size: cover;
+  background-position: right center;
+  position: relative;
+  &-inner {
+    position: relative;
+  }
+
+  &-go-top {
+    position: absolute;
+    top: remToPx(2.5);
+    right: remToPx(3.75);
+    width: remToPx(6.25);
+    height: remToPx(6.25);
+    cursor: pointer;
+    transition: transform 1s $easeExpo;
+    &:hover {
+      transform: scale(0.95);
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    width: 700px;
+    img {
+      width: 100%;
+    }
+  }
+
+  &-items {
+    margin-top: 12px;
+    display: flex;
+    gap: remToPx(4);
+  }
+
+  &-item {
+    position: relative;
+    &-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: remToPx(0.75);
+      width: 1em;
+      p {
+        writing-mode: vertical-lr;
+        letter-spacing: 0.75em;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 40px;
+        background-color: #000;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    &-des {
+      margin-left: remToPx(0.75 + 2);
+      &-title {
+        font-size: remToPx(0.875);
+        letter-spacing: 0.1em;
+        line-height: 1;
+        & + .footer-item-des-contents {
+          margin-top: 20px - remToPx(0.75) * 0.25;
+        }
+      }
+
+      &-contents {
+        display: flex;
+        gap: 0 remToPx(0.75) * 2;
+        p {
+          font-size: remToPx(0.75);
+          line-height: 1.5;
+        }
+        & + & {
+          margin-top: 12px - remToPx(0.75) * 0.5;
+        }
+      }
+    }
+  }
+
+  &-copy {
+    margin-top: 160px;
+    font-size: remToPx(0.75);
+    line-height: 1.5;
+  }
+
+  &-logo {
+    position: absolute;
+    right: remToPx(3.75);
+    bottom: 40px;
+    width: 100px;
+    img {
+      width: 100%;
+    }
+  }
+}

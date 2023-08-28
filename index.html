@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp_s.min.css"
+    />
+    <link href="./style.scss" rel="stylesheet" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <!-- prettier-ignore -->
+    <div class="wrapper">
+      <div class="wrapper-inner">
+        <%-include('./comp/sidebar')%>
+        <%-include('./comp/header')%>
+        <%-include('./comp/kv')%>
+        <%-include('./comp/profile')%>
+      </div>
+      <%-include('./comp/info')%>
+      <%-include('./comp/map')%>
+      <div class="wrapper-inner">
+        <%-include('./comp/sidebar')%>
+        <%-include('./comp/attendance')%>
+      </div>
+      <%-include('./comp/footer')%>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

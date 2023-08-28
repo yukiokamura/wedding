@@ -1,0 +1,38 @@
+.thankyou {
+  position: relative;
+  background-image: url("/img/bg-pattern-rsvp.webp");
+  background-size: 167px * 0.5;
+  padding-top: 320px;
+  padding-bottom: 320px;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.05em;
+  &-ja-tit {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  &-des {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  a {
+    display: block;
+    margin: 36px auto 0;
+    width: 120px;
+    padding: 15px 0;
+    background-color: rgb(219, 215, 202);
+    color: #000;
+    font-size: 12px;
+
+    clip-path: polygon(
+      5px 0%,
+      calc(100% - 5px) 0%,
+      100% 5px,
+      100% calc(100% - 5px),
+      calc(100% - 5px) 100%,
+      5px 100%,
+      0% calc(100% - 5px),
+      0% 5px
+    );
+  }
+}

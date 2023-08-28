@@ -1,0 +1,235 @@
+.kv {
+  width: 100%;
+  //   height: 100vh;
+  //   height: 100svh;
+  //   background-color: black;
+  background-image: url("/img/bg-pattern-flower.jpg");
+  background-color: rgba(255, 255, 255, 1);
+  background-blend-mode: lighten;
+  background-size: 438px * 2 389px * 2;
+  //   background-repeat: no-repeat;
+  padding-bottom: 160px;
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    position: relative;
+    // opacity: 0;
+  }
+  &-inner {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 80px;
+    img {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+
+  &-img {
+    position: relative;
+    width: math.div(679, 1478) * 100%;
+    min-width: 548px;
+    max-width: 800px;
+    &-deco {
+      position: absolute;
+    }
+
+    &-deco1 {
+      top: 0;
+      width: math.div(203, 679) * 100%;
+      margin-top: math.div(-31, 679) * 100%;
+      left: math.div(30, 679) * 100%;
+    }
+    &-deco2 {
+      bottom: 0;
+      right: math.div(-82, 679) * 100%;
+      width: math.div(260, 679) * 100%;
+      margin-bottom: math.div(100, 679) * 100%;
+    }
+
+    &-main {
+      width: 100%;
+      position: relative;
+
+      &-inner {
+        position: relative;
+        width: 75%;
+        margin: auto;
+      }
+      &-waku {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-text {
+    display: flex;
+    color: #fff;
+    gap: 0 remToPx(1.75);
+    margin-top: math.div(53, 1478) * 100%;
+
+    p {
+      writing-mode: vertical-lr;
+      position: relative;
+      z-index: 1;
+    }
+    &-sub {
+      font-size: remToPx(1.125);
+      letter-spacing: 0.75em;
+    }
+    &-name {
+      font-size: remToPx(1.75);
+      letter-spacing: 0.4em;
+      margin-top: remToPx(2.5);
+      position: relative;
+      &-deco {
+        content: "";
+        position: absolute;
+        background-size: 100%;
+      }
+    }
+    &-en {
+      font-size: remToPx(1.125);
+      letter-spacing: 0.1em;
+      margin-top: remToPx(2.5);
+    }
+
+    &-man {
+      .kv-text-sub {
+        transform: translate3d(-10px, 0, 0);
+        opacity: 0;
+      }
+      .kv-text-name {
+        transform: translate3d(-10px, 0, 0);
+        opacity: 0;
+        &-deco {
+          width: 144px * 0.5;
+          height: 448px * 0.5;
+          //   background-image: url(/svg/bg-ornament-kv-okamura.svg);
+
+          left: -12px;
+          top: 23px;
+        }
+      }
+      .kv-text-en {
+        transform: translate3d(-10px, 0, 0);
+        opacity: 0;
+      }
+    }
+
+    &-lady {
+      flex-flow: row-reverse;
+      .kv-text-sub {
+        transform: translate3d(10px, 0, 0);
+        opacity: 0;
+      }
+      .kv-text-name {
+        transform: translate3d(10px, 0, 0);
+        opacity: 0;
+        &-deco {
+          width: 124px * 0.5;
+          height: 355px * 0.5;
+          //   background-image: url(/svg/bg-ornament-kv-sato.svg);
+
+          left: 0px;
+          top: 0px;
+        }
+      }
+      .kv-text-en {
+        transform: translate3d(10px, 0, 0);
+        opacity: 0;
+      }
+    }
+  }
+
+  &-message {
+    width: 80%;
+    max-width: 1100px;
+    margin: remToPx(5) auto 0;
+    position: relative;
+    clip-path: polygon(
+      15px 0%,
+      calc(100% - 15px) 0%,
+      100% 15px,
+      100% calc(100% - 15px),
+      calc(100% - 15px) 100%,
+      15px 100%,
+      0% calc(100% - 15px),
+      0% 15px
+    );
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("/img/bg-paper.webp");
+      background-size: 1087px * 0.5 955px * 0.5;
+    }
+    &-inner {
+      position: relative;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    &-title {
+      width: 144px;
+      height: math.div(115, 291) * 144px;
+      margin: auto;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-contents {
+      margin-top: 40px - (14px * 1.6 - 14px) * 0.5;
+      p {
+        font-size: remToPx(0.875);
+        line-height: 1.6;
+        letter-spacing: 0.1em;
+        & + p {
+          margin-top: 40px - (14px * 1.6 - 14px);
+        }
+      }
+    }
+  }
+
+  &-goto-rsvp {
+    position: absolute;
+    bottom: remToPx(2.5);
+    right: remToPx(2.5) + 60px;
+    width: 150px;
+    height: 150px;
+    color: white;
+    background-image: url("/img/btn-go-rsvp.webp");
+    background-size: 100%;
+
+    text-align: center;
+    opacity: 0;
+    transition: transform 1s $easeExpo;
+    &:hover {
+      transform: scale(0.97);
+    }
+
+    a {
+      position: relative;
+      font-size: remToPx(0.875);
+      line-height: 1.6;
+      height: 136px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

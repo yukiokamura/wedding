@@ -1,0 +1,22 @@
+<svg viewbox="0 0 150 150">
+  <mask id="mask-not">
+    <circle
+      cx="75"
+      cy="75"
+      r="74"
+      fill="none"
+      stroke="white"
+      strke-width="3"
+      class="circleMask"
+    ></circle>
+  </mask>
+  <circle
+    cx="75"
+    cy="75"
+    r="74"
+    fill="none"
+    stroke="rgb(78,97,82)"
+    stroke-dasharray="6"
+    mask="url(#mask-not)"
+  ></circle>
+</svg>

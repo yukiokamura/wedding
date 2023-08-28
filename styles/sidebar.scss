@@ -1,0 +1,33 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  height: 100svh;
+
+  p {
+    writing-mode: vertical-lr;
+    color: #fff;
+    font-size: remToPx(1.125);
+  }
+}
+
+.sidebar-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: remToPx(3.75);
+  height: 100%;
+  background-color: #251f16;
+  z-index: 10;
+  // overflow: hidden;
+  transform: translateX(-60px);
+  opacity: 0;
+  &-right {
+    right: 0;
+    left: auto;
+    transform: translateX(60px);
+  }
+}

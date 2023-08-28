@@ -1,0 +1,35 @@
+@function remToPx($rem) {
+  @return $rem * 16px;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+$easeExpo: cubic-bezier(0.16, 1, 0.3, 1);
+@keyframes barAniamtionHide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes barAniamtionShow {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+$bp: 650px;
