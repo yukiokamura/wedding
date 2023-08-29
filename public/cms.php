@@ -13,12 +13,10 @@ $mail->isSMTP();
 $mail->Host = 'sv10093.xserver.jp';
 $mail->SMTPAuth   = true;
 $mail->Username   = 'contact@yukiokamura.com';  // SMTP ユーザ名
-$mail->Password   = 'yuuki123';  // SMTP パスワード
+$mail->Password   = $_ENV['MAILPASS'];  // SMTP パスワード
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  // 暗号化を有効に
 $mail->Port       = 465;  // TCP ポートを指定
 $mail->setFrom('contact@yukiokamura.com', mb_encode_mimeheader('岡村裕樹'));  
-// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-
 Dotenv\Dotenv::createImmutable(__DIR__)->load();
 $key = $_ENV['GKEY'];
 $client = new Client(
