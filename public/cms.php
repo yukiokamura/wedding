@@ -19,7 +19,8 @@ $mail->Port       = 465;  // TCP ポートを指定
 $mail->setFrom('contact@yukiokamura.com', mb_encode_mimeheader('岡村裕樹'));  
 // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-$key = "JHWtrpGuAoPAaNOILSH7HMJkOkIfuAh306ci";
+Dotenv\Dotenv::createImmutable(__DIR__)->load();
+$key = $_ENV['GKEY'];
 $client = new Client(
     "2abur33ta1",
     $key

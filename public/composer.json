@@ -1,6 +1,7 @@
 {
     "require": {
         "microcmsio/microcms-php-sdk": "^1.0",
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5"
     }
 }
