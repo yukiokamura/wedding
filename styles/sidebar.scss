@@ -25,6 +25,9 @@
   // overflow: hidden;
   transform: translateX(-60px);
   opacity: 0;
+  @include media-sp($bp) {
+    display: none;
+  }
   &-right {
     right: 0;
     left: auto;

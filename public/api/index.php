@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json; charset=UTF-8');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 require_once('vendor/autoload.php');
 use \Microcms\Client;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -6,6 +10,8 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
+Dotenv\Dotenv::createImmutable(__DIR__)->load();
+$key = $_ENV['GKEY'];
 $mail = new PHPMailer();
 $mail->CharSet = "iso-2022-jp";
 $mail->Encoding = "7bit";
@@ -17,8 +23,7 @@ $mail->Password   = $_ENV['MAILPASS'];  // SMTP パスワード
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  // 暗号化を有効に
 $mail->Port       = 465;  // TCP ポートを指定
 $mail->setFrom('contact@yukiokamura.com', mb_encode_mimeheader('岡村裕樹'));  
-Dotenv\Dotenv::createImmutable(__DIR__)->load();
-$key = $_ENV['GKEY'];
+
 $client = new Client(
     "2abur33ta1",
     $key
@@ -26,9 +31,7 @@ $client = new Client(
 
 
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-header('Content-Type: application/json; charset=UTF-8');
+
 $formData = array(
     "attendance"=> $_POST['attendance'] === '1' ? true : false,
     "name"=>$_POST['sei'].' '.$_POST['namae'],
@@ -65,7 +68,8 @@ $mail->Body  = mb_convert_encoding($message,"JIS","UTF-8");
 if($mail->send()){
 echo 'success';
 }else{
-echo 'error';
+// echo 'error';
+echo json_encode($_ENV);
 }
 
 // echo json_encode($data);

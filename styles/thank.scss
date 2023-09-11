@@ -7,9 +7,16 @@
   color: white;
   text-align: center;
   letter-spacing: 0.05em;
+  &-tit {
+    width: 390px * 0.5;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
   &-ja-tit {
     font-size: 14px;
-    margin-top: 12px;
+    margin-top: 20px;
   }
   &-des {
     margin-top: 20px;

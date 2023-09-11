@@ -4,6 +4,9 @@
   background-size: 167px * 0.5;
   padding-top: 160px;
   padding-bottom: 160px;
+  @include media-sp($bp) {
+    padding: 80px 16px;
+  }
   &-title {
     text-align: center;
     &-en {
@@ -39,7 +42,10 @@
       font-weight: 600;
       line-height: 1;
       position: relative;
-
+      @include media-sp($bp) {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
       &::after {
         content: "";
         display: block;
@@ -70,11 +76,17 @@
       0% calc(100% - 15px),
       0% 15px
     );
+    @include media-sp($bp) {
+      width: 100%;
+    }
     form {
       position: relative;
       padding: 80px 30px;
       max-width: 800px;
       margin: auto;
+      @include media-sp($bp) {
+        padding: 80px 32px;
+      }
     }
 
     &-des {
@@ -104,7 +116,11 @@
       flex-flow: column;
       justify-content: center;
       cursor: pointer;
-
+      @include media-sp($bp) {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
       &:hover {
         .attendance-form-btn-inner {
           transform: scale(0.95);
@@ -129,6 +145,10 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 2s $ease;
+        @include media-sp($bp) {
+          width: calc(100% + 30px);
+          height: calc(100% + 30px);
+        }
         &::after {
           content: "";
           width: 100%;
@@ -140,6 +160,9 @@
           top: 0;
           left: 0;
           animation: loopRotate 20s linear infinite;
+          @include media-sp($bp) {
+            background-size: 100%;
+          }
         }
         &::before {
           content: "";
@@ -152,6 +175,9 @@
           top: 0;
           left: 0;
           animation: loopRotate 25s linear infinite;
+          @include media-sp($bp) {
+            background-size: 100%;
+          }
         }
         span {
           width: 614px * 0.5;
@@ -162,6 +188,12 @@
           position: absolute;
           margin: 50% 50%;
           transform: translateX(-50%) translateY(-50%);
+          @include media-sp($bp) {
+            width: math.div(307, 220) * 100%;
+            height: auto;
+            aspect-ratio: 614 / 556;
+            background-size: 100%;
+          }
         }
       }
       &.active {
@@ -213,6 +245,9 @@
     &-item {
       border-top: 1px solid #d7d3cf;
       padding: 32px 0;
+      &:last-child {
+        padding-bottom: 0;
+      }
       label {
         font-size: remToPx(0.875);
         margin-bottom: 12px;
@@ -225,6 +260,7 @@
         width: 100%;
         height: remToPx(3.125);
         padding-left: 1em;
+        padding-right: 1em;
         font-size: 16px;
         position: relative;
         z-index: 1;
@@ -250,6 +286,9 @@
       &-flex {
         display: flex;
         gap: 0 40px;
+        @include media-sp($bp) {
+          display: block;
+        }
 
         & + & {
           margin-top: 32px;
@@ -259,6 +298,12 @@
         }
         &-item {
           width: 50%;
+          @include media-sp($bp) {
+            width: 100%;
+            & + & {
+              margin-top: 32px;
+            }
+          }
         }
       }
       &-box + &-box {
@@ -271,12 +316,17 @@
         padding: 1em;
         font-size: 16px;
         line-height: 1.6;
+        z-index: 2;
       }
 
       &-title {
         width: 150px;
         flex-shrink: 0;
         font-size: 14px;
+        @include media-sp($bp) {
+          width: 100%;
+        }
+
         &::after {
           content: " : ";
         }
@@ -284,6 +334,11 @@
       &-des {
         font-size: 14px;
         line-height: 1.5;
+        .comfirmation & {
+          @include media-sp($bp) {
+            margin-top: 10px;
+          }
+        }
       }
 
       &-comfirm {
@@ -293,6 +348,17 @@
       &-btns {
         display: flex;
         gap: 20px;
+        .comfirmation & {
+          @include media-sp($bp) {
+            display: block;
+            button {
+              display: block;
+              & + button {
+                margin-top: 20px;
+              }
+            }
+          }
+        }
         .backbtn {
           background-color: transparent;
           color: #000;
@@ -313,9 +379,57 @@
     height: 100%;
     background-image: url(/img/bg-paper.webp);
     background-size: 543.5px 477.5px;
+    overflow: hidden;
+    pointer-events: none;
     svg {
       width: 100%;
       height: 100%;
+      position: relative;
+
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 280px;
+      left: auto;
+      right: -50px;
+
+      // transform: translateY(10%);
+      aspect-ratio: 732 / 726;
+      width: 25%;
+      background-image: url("/img/bg-flower.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      // mix-blend-mode: darken;
+      opacity: 0.5;
+      min-width: 300px;
+      @include media-sp($bp) {
+        width: 75%;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 100px;
+      left: -50px;
+      // right: -50px;
+
+      transform: scaleX(-1);
+      aspect-ratio: 732 / 726;
+      width: 25%;
+      background-image: url("/img/bg-flower.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      // mix-blend-mode: darken;
+      opacity: 0.5;
+      min-width: 300px;
+      @include media-sp($bp) {
+        width: 75%;
+      }
     }
   }
 

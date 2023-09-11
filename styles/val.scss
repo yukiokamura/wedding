@@ -33,3 +33,9 @@ $easeExpo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 $bp: 650px;
+
+@mixin media-sp($point) {
+  @media screen and (max-width: $point) {
+    @content;
+  }
+}

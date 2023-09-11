@@ -52,3 +52,10 @@ canvas {
     position: relative;
   }
 }
+
+.sp_only {
+  display: none;
+  @include media-sp($bp) {
+    display: block;
+  }
+}

@@ -2,7 +2,9 @@
   background-color: #d9dbd0;
   padding: 160px remToPx(3.75);
   position: relative;
-
+  @include media-sp($bp) {
+    padding: 80px 16px;
+  }
   &::before {
     content: "";
     display: block;
@@ -17,6 +19,10 @@
     background-size: 100%;
     background-image: url("/img/bg-ornament-profile-a.webp");
     background-blend-mode: multiply;
+    opacity: 0.5;
+    @include media-sp($bp) {
+      left: 0;
+    }
   }
 
   &::after {
@@ -33,6 +39,10 @@
     background-size: 100%;
     background-image: url("/img/bg-ornament-profile-b.webp");
     background-blend-mode: multiply;
+    opacity: 0.5;
+    @include media-sp($bp) {
+      right: 0;
+    }
   }
 
   &-inner {
@@ -44,6 +54,9 @@
     text-align: center;
     height: remToPx(3.25);
     margin-bottom: 40px - remToPx(0.8125);
+    @include media-sp($bp) {
+      margin-bottom: 40px;
+    }
     img {
       width: auto;
       height: 100%;
@@ -55,17 +68,35 @@
     justify-content: center;
     // gap: 0 16%;
     margin: 0 8%;
+    @include media-sp($bp) {
+      display: block;
+      margin: 0;
+    }
   }
 
   &-item {
     width: 50%;
     flex-shrink: 1;
+    @include media-sp($bp) {
+      width: 100%;
+    }
+    &.profile-item-shinpu {
+      @include media-sp($bp) {
+        margin-top: 80px;
+      }
+    }
     &-title {
       display: block;
       width: remToPx(0.875) * 1.6;
+      @include media-sp($bp) {
+        margin: auto;
+      }
       .profile-item-shinpu & {
         margin-left: auto;
         margin-right: 0;
+        @include media-sp($bp) {
+          margin: auto;
+        }
       }
       p {
         writing-mode: vertical-lr;
@@ -82,6 +113,9 @@
         margin: auto;
         font-size: 0;
         background-color: #000;
+        @include media-sp($bp) {
+          display: none;
+        }
       }
     }
 
@@ -158,13 +192,24 @@
     &-des {
       margin-top: 80px;
       width: 75%;
+      @include media-sp($bp) {
+        margin: 80px auto 0;
+        width: calc(100% - 32px);
+      }
       .profile-item-shinpu & {
         margin-left: auto;
         margin-right: 0;
+        @include media-sp($bp) {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
       &-name {
         font-size: remToPx(1.5);
         line-height: 1;
+        @include media-sp($bp) {
+          text-align: center;
+        }
       }
       &-contents {
         margin-top: 32px - (remToPx(0.875) * 1.6 - remToPx(0.875)) * 0.5;

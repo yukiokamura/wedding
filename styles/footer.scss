@@ -4,6 +4,9 @@
   background-size: cover;
   background-position: right center;
   position: relative;
+  @include media-sp($bp) {
+    padding: 80px 16px 20px;
+  }
   &-inner {
     position: relative;
   }
@@ -22,10 +25,19 @@
     img {
       width: 100%;
     }
+    @include media-sp($bp) {
+      width: 54px;
+      height: 54px;
+      top: 16px;
+      right: 16px;
+    }
   }
 
   &-title {
     width: 700px;
+    @include media-sp($bp) {
+      width: 90%;
+    }
     img {
       width: 100%;
     }
@@ -35,10 +47,18 @@
     margin-top: 12px;
     display: flex;
     gap: remToPx(4);
+    @include media-sp($bp) {
+      display: block;
+    }
   }
 
   &-item {
     position: relative;
+    & + & {
+      @include media-sp($bp) {
+        margin-top: 40px;
+      }
+    }
     &-title {
       position: absolute;
       top: 0;
@@ -91,6 +111,9 @@
     margin-top: 160px;
     font-size: remToPx(0.75);
     line-height: 1.5;
+    @include media-sp($bp) {
+      margin-top: 80px;
+    }
   }
 
   &-logo {
@@ -98,6 +121,11 @@
     right: remToPx(3.75);
     bottom: 40px;
     width: 100px;
+    @include media-sp($bp) {
+      width: 50px;
+      bottom: 20px;
+      right: 16px;
+    }
     img {
       width: 100%;
     }

@@ -37,8 +37,11 @@ const namedeco2 = textAnimation.find((e) =>
 namedeco2.animation.setSpeed(0.8);
 
 const header = document.querySelector(".header");
-export const show = async () => {
+
+export const loading = async () => {
   await Promise.all(p);
+};
+export const show = () => {
   const tl = gsap.timeline();
   tl.to(bg, 1.75, {
     "background-color": "rgba(255, 255, 255, 0)",
@@ -60,7 +63,7 @@ export const show = async () => {
         opacity: 1,
         ease: "power2.inOut",
       },
-      1
+      1.5
     )
     .add(() => {
       deco1.start();
@@ -157,4 +160,6 @@ export const show = async () => {
       namedeco1.start();
       namedeco2.start();
     }, 4);
+
+  return tl;
 };

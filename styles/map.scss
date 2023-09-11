@@ -4,6 +4,9 @@
   background-image: url(/img/bg-map.webp);
   background-size: cover;
   margin-top: -1px;
+  @include media-sp($bp) {
+    padding: 80px 0;
+  }
   &-inner {
     width: 80%;
     max-width: 1100px;
@@ -19,6 +22,9 @@
     );
     margin: auto;
     position: relative;
+    @include media-sp($bp) {
+      width: calc(100% - 32px);
+    }
   }
 
   &-bg {
@@ -35,6 +41,9 @@
     position: relative;
     padding: 80px 80px;
     text-align: center;
+    @include media-sp($bp) {
+      padding: 80px 32px;
+    }
     &-tit {
       font-size: remToPx(1.125);
       line-height: 1;
@@ -64,6 +73,9 @@
       aspect-ratio: 16 / 9;
       position: relative;
       margin: 40px auto 0;
+      @include media-sp($bp) {
+        aspect-ratio: 9 / 16;
+      }
       &-inner {
         position: absolute;
         top: 0;

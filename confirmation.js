@@ -2,8 +2,9 @@ import { PaperSvg } from "./js/paparsvg";
 import { InputSvg } from "./js/input-svg";
 import Cookies from "js-cookie";
 import axios from "axios";
-const APIURL = "https://wedding.yukiokamura.com/cms.php";
+const APIURL = "https://wedding.yukiokamura.com/api/";
 
+// const APIURL = "http://localhost:3002/api/";
 document.querySelectorAll(".border-bg").forEach((el) => {
   new PaperSvg(el);
 });
@@ -29,11 +30,13 @@ form.addEventListener("submit", async (e) => {
       },
     })
     .then(({ data }) => data);
-
+  console.log(result);
   if (result === "success") {
-    // location.href = "/thankyou/";
+    console.log("aaa");
+    location.href = "/thankyou/";
   } else {
-    // location.href = "/thankyou/?error=1";
+    console.log("aaabb");
+    location.href = "/thankyou/?error=1";
   }
   return false;
 });

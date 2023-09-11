@@ -15,14 +15,15 @@
     // gap: remToPx(2.5);
     align-items: center;
   }
-  a {
-    display: block;
-  }
 
   &-logo {
     width: 145px * math.div(68, 141);
     height: 67px * math.div(68, 141);
     margin-left: 15px;
+    @include media-sp($bp) {
+      margin-left: 0;
+    }
+
     // margin-left: ;
   }
   &-text {
@@ -33,6 +34,10 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 3px;
+    display: block;
+    @include media-sp($bp) {
+      display: none;
+    }
     @include hover {
       &::after {
         animation: barAniamtionHide 0.5s $ease forwards;
